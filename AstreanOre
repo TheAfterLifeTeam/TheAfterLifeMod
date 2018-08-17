@@ -1,0 +1,14 @@
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace TheAfterLifeMod.Items.Astrean
+{
+	public class AstreanOre : ModItem
+	{
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Astrean Ore");
+			Tooltip.SetDefault("An ore forged of meager Astral energies.");
+		}
+	}
+}
