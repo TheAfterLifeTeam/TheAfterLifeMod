@@ -1,0 +1,43 @@
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace TheAfterLifeMod.Items.Astrean
+{
+	public class AstralBolt : ModItem
+	{
+		public override void SetStaticDefaults()
+		{
+			Tooltip.SetDefault("A tome made out of raw astral energy.");
+			
+		}
+
+		public override void SetDefaults()
+		{
+			item.damage = 15;
+			item.magic = true;
+			item.mana = 10;
+			item.width = 40;
+			item.height = 40;
+			item.useTime = 10;
+			item.useAnimation = 25;
+			item.useStyle = 5;
+			item.noMelee = true; //so the item's animation doesn't do damage
+			item.knockBack = 5;
+			item.value = 10000;
+			item.rare = 2;
+			item.UseSound = SoundID.Item20;
+			item.autoReuse = true;
+			item.shoot = 16 ;
+			item.shootSpeed = 16f;
+		}
+
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(null, "AstreanBar", 10);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
+	}
+}
