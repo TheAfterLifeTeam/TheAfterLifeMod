@@ -1,0 +1,45 @@
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace TheAfterLifeMod.Items.Astrean
+{
+	public class AstreanGun : ModItem
+	{
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Astrean Blaster");
+			Tooltip.SetDefault("A gun forged of Astral energies.");
+		}
+		public override void SetDefaults()
+		{
+			item.damage = 20;
+			item.ranged = true;
+			item.width = 40;
+			item.height = 20;
+			item.useTime = 20;
+			item.useAnimation = 20;
+			item.useStyle = 5;
+			item.noMelee = true; //so the item's animation doesn't do damage
+			item.knockBack = 4;
+			item.value = 10000;
+			item.rare = 2;
+			item.UseSound = SoundID.Item11;
+			item.autoReuse = true;
+			item.shoot = 10; //idk why but all the guns in the vanilla source have this
+			item.shootSpeed = 16f;
+			item.useAmmo = AmmoID.Bullet;
+			item.autoReuse = true;
+			item.scale = 0.9f ;
+		}
+
+
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(null, "AstreanBar", 12);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
+	}
+}
